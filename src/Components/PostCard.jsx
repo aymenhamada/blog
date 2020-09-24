@@ -5,7 +5,7 @@ import "../css/PostCard.css";
 function PostCard(props) {
   return (
     <Link
-      to={`/posts/${props.id}`}
+      to={`/posts/${props.id}/#top`}
       style={{ textDecoration: "none", color: "black" }}
     >
       <div className="post-card">
