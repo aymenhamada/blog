@@ -207,12 +207,13 @@ function App() {
     const parsedData = await result.json();
     setPosts(parsedData);
   };
+
   const Post = ({ match }) => {
     const post = posts.find((post) => {
       return parseInt(match.params.id) === post.id;
     });
-  document.title = {post.title}
 
+    document.title = post.title;
     return (
       <div>
         <Navbar />
