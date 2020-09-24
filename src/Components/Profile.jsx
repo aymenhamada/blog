@@ -4,6 +4,7 @@ import profile from "../images/profile.jpg";
 import { Button } from "@material-ui/core";
 
 function Profile() {
+document.title = "Rishi's Blog | Profile"
   return (
     <div className="profile-container">
       <div>
