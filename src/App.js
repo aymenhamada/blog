@@ -213,7 +213,7 @@ function App() {
       return parseInt(match.params.id) === post.id;
     });
 
-    document.title = post && post.title || `Rishi's | Blog ${match.params.id}`;
+    document.title = (post && post.title) || `Rishi's | Blog ${match.params.id}`;
     return (
       <div id="top">
         <Navbar />
