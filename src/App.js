@@ -208,17 +208,17 @@ function App() {
     setPosts(parsedData);
   };
 
-  const Post = ({ match }) => {
+  const Post =  ({ match }) => {
     const post = posts.find((post) => {
       return parseInt(match.params.id) === post.id;
     });
 
-    document.title = post.title;
+    document.title = post && post.title || `Rishi's | Blog ${match.params.id}`;
     return (
       <div id="top">
         <Navbar />
         <div className="intro-container">
-          <h1>{post.title}</h1>
+          <h1>{post && post.title}</h1>
 
           <div className="intro-inside-container">
             <Link
@@ -240,18 +240,18 @@ function App() {
 
             <span style={{ color: "#888888" }} className="span">
               {" "}
-              {post.date}
+              {post && post.date}
             </span>
             <span style={{ color: "#888888" }} className="span mob-span">
               {" "}
-              •{post.time}
+              •{post && post.time}
             </span>
           </div>
-          <img className="intro-image" src={post.imgSource} alt="" />
+          <img className="intro-image" src={post && post.imgSource} alt="" />
         </div>
         <div className="post-body">
           <div className="post-body-inside">
-            {ReactHtmlParser(post.postBody)}
+            {ReactHtmlParser(post && post.postBody)}
           </div>
         </div>
         <div className="btn-holder">
