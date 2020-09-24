@@ -217,7 +217,7 @@ function App() {
     return (
       <div>
         <Navbar />
-        <div className="intro-container">
+        <div id="top" className="intro-container">
           <h1>{post.title}</h1>
 
           <div className="intro-inside-container">
