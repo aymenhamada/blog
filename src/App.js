@@ -207,18 +207,12 @@ function App() {
     const parsedData = await result.json();
     setPosts(parsedData);
   };
-  window.onbeforeunload = function () {
-    console.log("hi");
-  };
   const Post = ({ match }) => {
     const post = posts.find((post) => {
       return parseInt(match.params.id) === post.id;
     });
-    window.onbeforeunload = function () {
-      return alert(
-        "Dude, are you sure you want to leave? Think of the kittens!"
-      );
-    };
+  document.title = {post.title}
+
     return (
       <div>
         <Navbar />
