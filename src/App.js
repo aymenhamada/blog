@@ -215,9 +215,9 @@ function App() {
 
     document.title = post.title;
     return (
-      <div>
+      <div id="top">
         <Navbar />
-        <div id="top" className="intro-container">
+        <div className="intro-container">
           <h1>{post.title}</h1>
 
           <div className="intro-inside-container">
