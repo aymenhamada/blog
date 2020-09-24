@@ -7,7 +7,7 @@ function Content() {
         Hello World I'm Rishikesh, This is my blog.{" "}
       </h1>
       <h1> I write a lot about Coding, </h1>
-      <h1>Life Skills and much more.</h1>
+      <h1>Life Skills</h1><h1> and much more.</h1>
       <div style={{ paddingLeft: "30px", marginTop: "50px" }}>
         <a
           style={{ padding: "15px 25px", fontSize: "20px" }}
