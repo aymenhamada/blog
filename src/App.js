@@ -202,6 +202,7 @@ function App() {
       return parseInt(match.params.id) === post.id;
     });
     document.title = post.title;
+    window.scrollTo(0, 0);
     return (
       <div>
         <Navbar />
