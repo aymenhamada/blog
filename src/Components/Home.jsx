@@ -6,7 +6,7 @@ import "../css/Home.css";
 import PostCard from "./PostCard";
 
 function Home() {
-  window.scrollTo(0, 0);
+  
   useEffect(() => {
     fetchData();
   }, []);
