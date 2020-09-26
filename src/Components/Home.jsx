@@ -17,6 +17,7 @@ function Home() {
     const parsedData = await result.json();
     setPosts(parsedData);
   };
+  localStorage.setItem("posts", JSON.stringify(posts));
   return (
     <div className="showcase">
       <Navbar />
