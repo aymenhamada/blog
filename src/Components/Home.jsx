@@ -17,8 +17,8 @@ function Home() {
     const result = await fetch(url);
     const parsedData = await result.json();
     setPosts(parsedData);
+    localStorage.setItem("posts", JSON.stringify(posts));
   };
-  localStorage.setItem("posts", JSON.stringify(posts));
   return (
     <div className="showcase">
       <Navbar />
