@@ -195,10 +195,11 @@ function App() {
       </div>
     );
   }
+   
 
+const posts = JSON.parse(localStorage.getItem("posts"));
 
   const Post = ({ match }) => {
-      const posts = JSON.parse(localStorage.getItem("posts"));
 
     const post = posts.find((post) => {
       return parseInt(match.params.id) === post.id;
