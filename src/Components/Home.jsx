@@ -13,10 +13,14 @@ function Home() {
   const fetchData = async () => {
     const url = "https://run.mocky.io/v3/2cc5e901-012a-49c7-8418-fd0af3ad868d";
 
-    const result = await fetch(url);
-    const parsedData = await result.json();
-    setPosts(parsedData);
+    const result = await (await fetch(url)).json();
+    setPosts(result);
   };
+  if (posts !== []) {
+    localStorage.setItem("posts", JSON.stringify(posts));
+  } else {
+    return;
+  }
   return (
     <div className="showcase">
       <Navbar />

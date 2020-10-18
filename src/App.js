@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Home from "./Components/Home";
 import Error from "./Components/Error";
 import Avatar from "@material-ui/core/Avatar";
@@ -195,27 +195,26 @@ function App() {
       </div>
     );
   }
+   
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-  const [posts, setPosts] = useState([]);
-  const fetchData = async () => {
-    const url = "https://run.mocky.io/v3/2cc5e901-012a-49c7-8418-fd0af3ad868d";
+const posts = JSON.parse(localStorage.getItem("posts"));
 
-    const result = await fetch(url);
-    const parsedData = await result.json();
-    setPosts(parsedData);
-  };
 
   const Post =  ({ match }) => {
     const post = posts.find((post) => {
       return parseInt(match.params.id) === post.id;
     });
 
-    document.title = (post && post.title) || `Rishi's | Blog ${match.params.id}`;
+    document.title = (post && post.title) || `Rishi's | Blog ${match.params.id}
+  const Post = ({ match }) => {
+
+    const post = posts.find((post) => {
+      return parseInt(match.params.id) === post.id;
+    });
+    document.title = post.title;
+    window.scrollTo(0, 0);
     return (
-      <div id="top">
+      <div>
         <Navbar />
         <div className="intro-container">
           <h1>{post && post.title}</h1>
